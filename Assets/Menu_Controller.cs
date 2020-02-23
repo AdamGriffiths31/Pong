@@ -16,4 +16,12 @@ public class Menu_Controller : MonoBehaviour
     {
         Application.Quit();
     }
+    public void SinglePlayer()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

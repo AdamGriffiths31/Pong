@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: a89baac9177fb1a4386d3416e7347259
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Default_Game_Scence.unity
     guid: 7be4abd90f4180d4fbbc1001520c713f
   - enabled: 1
     path: Assets/Scenes/Player_1_Wins.unity
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Player_2_Wins.unity
     guid: cbc667d0ec1663148a4bc26d8e9ac22c
+  - enabled: 1
+    path: Assets/Scenes/1_Player_Game.unity
+    guid: b2e8126b2003678468572ed80571a306
   m_configObjects: {}
