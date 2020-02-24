@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ball_Controller : MonoBehaviour
 {
+    private bool IsPaused = false;
     private Rigidbody2D Rb;
     public GameObject Bat1;
     public GameObject Bat2;
+    public GameObject PauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,34 @@ public class Ball_Controller : MonoBehaviour
             this.transform.position = new Vector3(0, 0, 0);
             StartCoroutine(Pause());
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(IsPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+    public void PauseGame()
+    {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        IsPaused = true;
+    }
+    public void ResumeGame()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        IsPaused = false;
     }
     IEnumerator Pause()
     {

@@ -24,4 +24,8 @@ public class Menu_Controller : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene(5);
+    }
 }

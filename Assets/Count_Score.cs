@@ -25,7 +25,6 @@ public class Count_Score : MonoBehaviour
     {
         if (Ball.transform.position.x >= 29 && CanAdd==true)
         {
-            print("1");
             CanAdd = false;
             Bat_1_Score++;
         }

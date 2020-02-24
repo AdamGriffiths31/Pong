@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1_Player_Game.unity
     guid: b2e8126b2003678468572ed80571a306
+  - enabled: 1
+    path: Assets/Scenes/Level_Select.unity
+    guid: 94e32f6801a79d748af756692a1c2cd5
+  - enabled: 1
+    path: Assets/Scenes/White_Sqaure.unity
+    guid: 219cd5c8f41593b4489ee983e96da58d
+  - enabled: 1
+    path: Assets/Scenes/White_Circle.unity
+    guid: e735227a673dfd44485d0bd374bcdf42
   m_configObjects: {}
