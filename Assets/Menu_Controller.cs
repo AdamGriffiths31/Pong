@@ -28,4 +28,8 @@ public class Menu_Controller : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+    public void PowerUpMode()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

@@ -11,6 +11,7 @@ public class Ball_Controller : MonoBehaviour
     public GameObject Bat1;
     public GameObject Bat2;
     public GameObject PauseMenu;
+    public static float BallSpeed = 15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,20 +74,21 @@ public class Ball_Controller : MonoBehaviour
         }
         Rb.velocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(2);
-        Rb.velocity = new Vector2(15f*directionX, 15f * directionY);
+        Rb.velocity = new Vector2(BallSpeed * directionX, BallSpeed * directionY);
 
     }
+
     void OnCollisionEnter2D(Collision2D hit)
     {
         if (hit.gameObject.name == "Bat_1")
         {
             if (Bat1.GetComponent<Rigidbody2D>().velocity.y>0.5f)
             {
-                Rb.velocity = new Vector2(15f, 15f);
+                Rb.velocity = new Vector2(BallSpeed, BallSpeed);
             }
             else if (Bat1.GetComponent<Rigidbody2D>().velocity.y < -0.5f)
             {
-                Rb.velocity = new Vector2(15f, -15f);
+                Rb.velocity = new Vector2(BallSpeed, -BallSpeed);
             }
             else
             {
@@ -98,16 +100,28 @@ public class Ball_Controller : MonoBehaviour
         {
             if (Bat2.GetComponent<Rigidbody2D>().velocity.y > 0.5f)
             {
-                Rb.velocity = new Vector2(-15f, 15f);
+                Rb.velocity = new Vector2(-BallSpeed, BallSpeed);
             }
             else if (Bat2.GetComponent<Rigidbody2D>().velocity.y < -0.5f)
             {
-                Rb.velocity = new Vector2(-15f, -15f);
+                Rb.velocity = new Vector2(-BallSpeed, -BallSpeed);
             }
             else
             {
-                Rb.velocity = new Vector2(-20f, 0f);
+                Rb.velocity = new Vector2(-BallSpeed, 0f);
             }
+        }
+        if (hit.gameObject.name == "Power_Down_Arrow")
+        {
+            Power_Controller.ShrinkActive = true;
+        }
+        if (hit.gameObject.name == "Power_Ball_Speed_Up")
+        {
+            Power_Controller.BallSpeedUpActive = true;
+        }
+        if (hit.gameObject.name == "Power_Sqaures")
+        {
+            Power_Controller.WhiteSquaresActive = true;
         }
     }
 }
